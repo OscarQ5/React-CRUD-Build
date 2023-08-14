@@ -2,10 +2,12 @@ import { useState } from 'react'
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import NavBar from '../Components/NavBar.jsx'
 import ShowsList from '../Components/ShowsRelevant/ShowsList.jsx'
+import MoviesList from '../Components/MoviesRelevant/MoviesList.jsx'
+import NewShowsList from '../Components/ShowsRelevant/NewShowsList.jsx'
+import ShowDetails from '../Components/ShowsRelevant/ShowDetails.jsx'
 import './App.css'
 
 function App() {
-  // console.log(import.meta.env.VITE_10_1_VAR)
   return (
     <>
       <Router>
@@ -16,11 +18,11 @@ function App() {
         <Routes>
           <Route path='/' element={<h1>Home</h1>}/>
           <Route path='/shows' element={<ShowsList />}/>
-          <Route path='/shows/new' element={<h1>Form for New Shows</h1>}/>
-          <Route path='/movies' element={<h1>All Movies</h1>}/>
+          <Route path='/shows/new' element={<NewShowsList />}/>
+          <Route path='/shows/:id' element={<ShowDetails />}/>
+          <Route path='/movies' element={<MoviesList />}/>
         </Routes>
-        <h2>-TEST-{import.meta.env.VITE_10_1_VAR}</h2>
-
+        <br />
         <footer>
           10.1 ©️
         </footer>
